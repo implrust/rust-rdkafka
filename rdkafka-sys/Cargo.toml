@@ -56,11 +56,14 @@ ssl-vendored = ["ssl", "openssl-sys/vendored"]
 # Enable SASL GSSAPI support with Cyrus libsasl2.
 gssapi = ["ssl", "sasl2-sys"]
 
-# Build and link against the libsasl2 bundled with the sasl2-sys crate.
+# Build and link against the libsasl2 bundled with the sasl2-sys crate with gssapi support.
 gssapi-vendored = ["gssapi", "sasl2-sys/gssapi-vendored"]
 
-# Deprecated alias for the `gssapi` feature.
-sasl = ["gssapi"]
+# Enable SASL support with Cyrus libsasl2.
+sasl = ["sasl2-sys"]
+
+# Build and link against the libsasl2 bundled with the sasl2-sys crate.
+sasl-vendored = ["sasl", "sasl2-sys/vendored"]
 
 # Enable support for libz compression.
 libz = ["libz-sys"]
