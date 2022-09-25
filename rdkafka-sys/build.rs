@@ -217,7 +217,7 @@ fn build_librdkafka() {
         config.define("WITH_SSL", "0");
     }
 
-    if env::var("CARGO_FEATURE_GSSAPI").is_ok() {
+    if env::var("CARGO_FEATURE_SASL").is_ok() {
         config.define("WITH_SASL", "1");
         config.register_dep("sasl2");
         if let Ok(sasl2_root) = env::var("DEP_SASL2_ROOT") {
